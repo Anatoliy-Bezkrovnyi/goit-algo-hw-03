@@ -14,13 +14,23 @@ def koch_snowflake_flake(turtle, order, size):
         turtle.right(120)
 
 def main():
+   
+    while True:
+        order = input("Введіть рівень бажаної рекурсії, має бути ціле число: ")
+        try:
+            order = int(order)
+        except ValueError:
+            continue
+        else: 
+            break
+
     turtle.speed(6)
     turtle.up()
     turtle.goto(-150, -75)
     turtle.down()
-
+    
     # Намалюємо сніжинку Коха з порядком 3 та розміром 450
-    koch_snowflake_flake(turtle, 5, 450)
+    koch_snowflake_flake(turtle, order, 450)
 
     turtle.hideturtle()
     turtle.done()
